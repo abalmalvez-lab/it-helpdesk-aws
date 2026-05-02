@@ -289,18 +289,6 @@ Open your browser and go to:
 http://YOUR_ELASTIC_IP
 ```
 
-Login with:
-
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@helpdesk.local | Admin123! |
-| Staff | staff@helpdesk.local | Staff123! |
-| User | user@helpdesk.local | User123! |
-
-> **Change all passwords immediately after first login.**
-
----
-
 ## Cleanup (When Done)
 
 To avoid charges, terminate everything:

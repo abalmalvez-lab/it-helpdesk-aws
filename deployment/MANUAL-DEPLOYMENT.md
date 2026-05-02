@@ -471,19 +471,7 @@ http://YOUR_ELASTIC_IP
 
 ---
 
-## 19. Default Login Accounts
-
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@helpdesk.local | Admin123! |
-| Support Staff | staff@helpdesk.local | Staff123! |
-| End User | user@helpdesk.local | User123! |
-
-> **Change all passwords immediately after verifying the application works.**
-
----
-
-## 20. Optional: Install SSL (HTTPS)
+## 19. Optional: Install SSL (HTTPS)
 
 > Requires a registered domain name pointed to your Elastic IP.
 
