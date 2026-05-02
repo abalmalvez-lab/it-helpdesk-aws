@@ -212,7 +212,8 @@ sudo rm -f /var/www/html/index.html
 # scp -i ~/helpdesk-key.pem it-helpdesk-aws.zip ubuntu@YOUR_ELASTIC_IP:~/
 
 # Then on EC2:
-cd ~ && unzip it-helpdesk-aws.zip
+git clone https://github.com/abalmalvez-lab/it-helpdesk-aws.git it-helpdesk-aws
+chmod +x it-helpdesk-aws/deployment/*.sh
 sudo cp -r it-helpdesk-aws/* /var/www/html/
 sudo cp it-helpdesk-aws/.env.example /var/www/html/
 sudo cp it-helpdesk-aws/.htaccess /var/www/html/
