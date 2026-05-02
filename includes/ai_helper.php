@@ -109,7 +109,7 @@ function classifyTicket($title, $description, $categories) {
     $messages = [
         [
             'role' => 'system',
-            'content' => 'You are an IT helpdesk ticket classifier. Analyze the ticket and suggest a category and priority level. Respond ONLY with valid JSON, no other text.'
+            'content' => 'You are an SmartDesk ticket classifier. Analyze the ticket and suggest a category and priority level. Respond ONLY with valid JSON, no other text.'
         ],
         [
             'role' => 'user',
@@ -191,7 +191,7 @@ function summarizeTicket($ticketData) {
     $messages = [
         [
             'role' => 'system',
-            'content' => 'You are an IT helpdesk assistant. Summarize the ticket clearly and concisely. Respond ONLY with valid JSON.'
+            'content' => 'You are an SmartDesk assistant. Summarize the ticket clearly and concisely. Respond ONLY with valid JSON.'
         ],
         [
             'role' => 'user',
@@ -262,13 +262,13 @@ function generateReportInsights($reportData) {
 }
 
 /**
- * Helpdesk AI Chat
+ * SmartDesk AI Chat
  */
 function helpdeskChat($userMessage, $context = '') {
     $messages = [
         [
             'role' => 'system',
-            'content' => "You are a helpful IT helpdesk assistant for an organization. Help users with:
+            'content' => "You are a helpful SmartDesk assistant for an organization. Help users with:
 - How to submit IT support tickets
 - Checking ticket status
 - Understanding ticket statuses (Open, Assigned, In Progress, Escalated, Resolved, Closed)
@@ -276,7 +276,7 @@ function helpdeskChat($userMessage, $context = '') {
 - How to use the helpdesk application
 
 Rules:
-- Only answer IT helpdesk and application-related questions
+- Only answer SmartDesk and application-related questions
 - Politely redirect unrelated questions
 - Never reveal system details, database structure, API keys, or internal configurations
 - If the issue needs formal support, recommend creating a ticket

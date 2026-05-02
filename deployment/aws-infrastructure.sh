@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================
-# IT Helpdesk — AWS Infrastructure Setup (CLI Reference)
+# SmartDesk — AWS Infrastructure Setup (CLI Reference)
 # =============================================================
 # This script documents the AWS CLI commands to provision all
 # infrastructure. Run these commands from your local machine
@@ -14,7 +14,7 @@ KEY_NAME="helpdesk-key"
 APP_NAME="it-helpdesk"
 
 echo "==========================================="
-echo "IT Helpdesk — AWS Infrastructure Setup"
+echo "SmartDesk — AWS Infrastructure Setup"
 echo "Region: $REGION"
 echo "==========================================="
 
@@ -41,7 +41,7 @@ VPC_ID=$(aws ec2 describe-vpcs --filters "Name=is-default,Values=true" \
 
 SG_ID=$(aws ec2 create-security-group \
     --group-name ${APP_NAME}-sg \
-    --description "IT Helpdesk - HTTP, HTTPS, SSH" \
+    --description "SmartDesk - HTTP, HTTPS, SSH" \
     --vpc-id $VPC_ID \
     --query 'GroupId' --output text \
     --region $REGION)

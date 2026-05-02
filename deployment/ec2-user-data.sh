@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================
-# IT Helpdesk — EC2 User-Data Bootstrap Script
+# SmartDesk — EC2 User-Data Bootstrap Script
 # =============================================================
 # Run this as user-data when launching an EC2 t3.micro instance
 # with Amazon Linux 2023 or Ubuntu 24.04.
@@ -13,7 +13,7 @@ set -e
 exec > /var/log/helpdesk-setup.log 2>&1
 
 echo "=========================================="
-echo "IT Helpdesk — EC2 Setup Starting"
+echo "SmartDesk — EC2 Setup Starting"
 echo "$(date)"
 echo "=========================================="
 
@@ -130,7 +130,7 @@ if command -v firewall-cmd &>/dev/null; then
 fi
 
 echo "=========================================="
-echo "IT Helpdesk — EC2 Setup Complete"
+echo "SmartDesk — EC2 Setup Complete"
 echo "$(date)"
 echo ""
 echo "Next steps:"

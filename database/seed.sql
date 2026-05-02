@@ -1,5 +1,5 @@
 -- ============================================================
--- IT Helpdesk Ticketing System - Seed Data
+-- SmartDesk Ticketing System - Seed Data
 -- ============================================================
 USE it_helpdesk;
 
@@ -11,21 +11,21 @@ USE it_helpdesk;
 -- bcrypt format. If hashes don't work, run the hash_passwords.php script.
 -- ============================================================
 INSERT INTO users (employee_id, full_name, department, email, contact_number, password_hash, role, status) VALUES
-('EMP-001', 'System Administrator', 'IT Department', 'admin@helpdesk.local', '09171234567', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Admin', 'Active'),
-('EMP-002', 'John Reyes', 'IT Support', 'staff@helpdesk.local', '09171234568', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
-('EMP-003', 'Maria Santos', 'Human Resources', 'user@helpdesk.local', '09171234569', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-004', 'Ana Cruz', 'IT Support', 'ana.cruz@helpdesk.local', '09171234570', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
-('EMP-005', 'Carlos Garcia', 'IT Support', 'carlos.garcia@helpdesk.local', '09171234571', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
-('EMP-006', 'Lisa Tan', 'Finance', 'lisa.tan@helpdesk.local', '09171234572', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-007', 'Mark Rivera', 'Marketing', 'mark.rivera@helpdesk.local', '09171234573', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-008', 'Sarah Lim', 'Operations', 'sarah.lim@helpdesk.local', '09171234574', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-009', 'Paolo Mendez', 'Engineering', 'paolo.mendez@helpdesk.local', '09171234575', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-010', 'Joy Dela Cruz', 'Accounting', 'joy.delacruz@helpdesk.local', '09171234576', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-011', 'Rico Bautista', 'IT Support', 'rico.bautista@helpdesk.local', '09171234577', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
-('EMP-012', 'Grace Villanueva', 'Sales', 'grace.v@helpdesk.local', '09171234578', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-013', 'Dennis Aquino', 'Legal', 'dennis.a@helpdesk.local', '09171234579', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
-('EMP-014', 'Nina Ramos', 'Admin', 'nina.ramos@helpdesk.local', '09171234580', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Admin', 'Active'),
-('EMP-015', 'Ben Torres', 'Procurement', 'ben.torres@helpdesk.local', '09171234581', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active');
+('EMP-001', 'System Administrator', 'IT Department', 'admin@smartdesk.local', '09171234567', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Admin', 'Active'),
+('EMP-002', 'John Reyes', 'IT Support', 'staff@smartdesk.local', '09171234568', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
+('EMP-003', 'Maria Santos', 'Human Resources', 'user@smartdesk.local', '09171234569', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-004', 'Ana Cruz', 'IT Support', 'ana.cruz@smartdesk.local', '09171234570', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
+('EMP-005', 'Carlos Garcia', 'IT Support', 'carlos.garcia@smartdesk.local', '09171234571', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
+('EMP-006', 'Lisa Tan', 'Finance', 'lisa.tan@smartdesk.local', '09171234572', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-007', 'Mark Rivera', 'Marketing', 'mark.rivera@smartdesk.local', '09171234573', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-008', 'Sarah Lim', 'Operations', 'sarah.lim@smartdesk.local', '09171234574', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-009', 'Paolo Mendez', 'Engineering', 'paolo.mendez@smartdesk.local', '09171234575', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-010', 'Joy Dela Cruz', 'Accounting', 'joy.delacruz@smartdesk.local', '09171234576', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-011', 'Rico Bautista', 'IT Support', 'rico.bautista@smartdesk.local', '09171234577', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Support Staff', 'Active'),
+('EMP-012', 'Grace Villanueva', 'Sales', 'grace.v@smartdesk.local', '09171234578', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-013', 'Dennis Aquino', 'Legal', 'dennis.a@smartdesk.local', '09171234579', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active'),
+('EMP-014', 'Nina Ramos', 'Admin', 'nina.ramos@smartdesk.local', '09171234580', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'Admin', 'Active'),
+('EMP-015', 'Ben Torres', 'Procurement', 'ben.torres@smartdesk.local', '09171234581', '$2y$10$8K1p/a0dL1LXMIgoEDFrwOfMQkLgOW/FEhJNaJhHJqOGqi3jA2yCe', 'End User', 'Active');
 
 -- ============================================================
 -- Categories

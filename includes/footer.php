@@ -10,13 +10,13 @@
     <div class="chat-header">
         <i class="fas fa-robot fa-lg"></i>
         <div>
-            <div class="chat-title">Helpdesk AI Assistant</div>
+            <div class="chat-title">SmartDesk AI Assistant</div>
             <div class="chat-subtitle">Ask me about IT support</div>
         </div>
     </div>
     <div class="chat-messages" id="chatMessages">
         <div class="chat-msg bot">
-            <div class="msg-bubble">Hi! I'm your IT Helpdesk assistant. How can I help you today?</div>
+            <div class="msg-bubble">Hi! I'm your SmartDesk assistant. How can I help you today?</div>
         </div>
     </div>
     <div class="chat-input-area">

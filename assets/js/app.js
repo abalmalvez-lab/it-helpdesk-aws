@@ -1,5 +1,5 @@
 /**
- * IT Helpdesk Ticketing System - Main JavaScript
+ * SmartDesk Ticketing System - Main JavaScript
  */
 
 // Sidebar toggle

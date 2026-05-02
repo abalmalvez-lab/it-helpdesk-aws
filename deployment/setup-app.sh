@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================
-# IT Helpdesk — Post-Deploy Setup Script
+# SmartDesk — Post-Deploy Setup Script
 # =============================================================
 # Run this AFTER uploading application files to the web root.
 # Usage: sudo bash deployment/setup-app.sh
@@ -8,7 +8,7 @@
 
 set -e
 
-echo "IT Helpdesk — Post-Deploy Setup"
+echo "SmartDesk — Post-Deploy Setup"
 echo "================================"
 
 # Detect web root

@@ -1,4 +1,4 @@
-# IT Helpdesk Ticketing System — AWS Edition
+# SmartDesk Ticketing System — AWS Edition
 
 A full-stack PHP/MySQL IT support ticketing system with OpenAI-powered AI features, deployed on Amazon Web Services (EC2 + MySQL + S3).
 
@@ -15,7 +15,7 @@ A full-stack PHP/MySQL IT support ticketing system with OpenAI-powered AI featur
 │  │  (Static IP) │    │  ┌────────────────────────┐  │    │
 │  └─────────────┘    │  │ Apache + PHP 8.x       │  │    │
 │                      │  │ MySQL 8 (local)        │  │    │
-│                      │  │ IT Helpdesk App        │  │    │
+│                      │  │ SmartDesk App        │  │    │
 │                      │  └────────────────────────┘  │    │
 │                      └──────────┬───────────────────┘    │
 │                                 │                        │
@@ -145,7 +145,7 @@ OPENAI_API_KEY=sk-your-key-here
 Open `http://your-elastic-ip` in your browser.
 
 Default admin account (after running hash_passwords.php):
-- **Email:** admin@helpdesk.local
+- **Email:** admin@smartdesk.local
 - **Password:** Admin123!
 
 **Important:** Change the admin password immediately after first login, then delete `hash_passwords.php`:
@@ -301,9 +301,9 @@ it-helpdesk-aws/
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@helpdesk.local | Admin123! |
-| Support Staff | staff@helpdesk.local | Staff123! |
-| End User | user@helpdesk.local | User123! |
+| Admin | admin@smartdesk.local | Admin123! |
+| Support Staff | staff@smartdesk.local | Staff123! |
+| End User | user@smartdesk.local | User123! |
 
 **Change all passwords immediately after deployment.** These accounts are created by `seed.sql` and `hash_passwords.php`.
 
@@ -337,4 +337,4 @@ it-helpdesk-aws/
 ## Author
 
 CMSC 207 — Web Development
-IT Helpdesk Ticketing System with AI Integration (AWS Edition)
+SmartDesk Ticketing System with AI Integration (AWS Edition)

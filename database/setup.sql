@@ -1,5 +1,5 @@
 -- ============================================================
--- IT Helpdesk Ticketing System - Database Setup
+-- SmartDesk Ticketing System - Database Setup
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS it_helpdesk CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

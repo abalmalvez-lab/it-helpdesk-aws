@@ -6,7 +6,7 @@ $role = getCurrentUserRole();
     <div class="sidebar-brand">
         <div class="brand-icon"><i class="fas fa-headset"></i></div>
         <div class="brand-text">
-            IT Helpdesk
+            SmartDesk
             <small>Ticketing System</small>
         </div>
     </div>
