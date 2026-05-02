@@ -1,0 +1,34 @@
+# IT Helpdesk — Apache Security Configuration
+
+# Protect .env file
+<Files .env>
+    Require all denied
+</Files>
+
+# Protect .env.example
+<Files .env.example>
+    Require all denied
+</Files>
+
+# Disable directory listing
+Options -Indexes
+
+# Deny access to deployment scripts
+<Directory "deployment">
+    Require all denied
+</Directory>
+
+# Deny access to database SQL files
+<Files "*.sql">
+    Require all denied
+</Files>
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Prevent MIME type sniffing
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
