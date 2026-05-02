@@ -10,27 +10,28 @@ A full-stack PHP/MySQL IT support ticketing system with OpenAI-powered AI featur
 graph TD
     subgraph AWS_Cloud["AWS Cloud (us-east-1 / N. Virginia)"]
         EIP["Elastic IP<br/>(Static IP)"]
-        EC2["EC2 t3.micro<br/>(Ubuntu 24.04)"]
+        
+        subgraph EC2["EC2 t3.micro<br/>(Ubuntu 24.04)"]
+            Apache["Apache + PHP 8.x"]
+            MySQL["MySQL 8 (local)"]
+            App["SmartDesk App"]
+        end
+        
         S3["S3 Bucket<br/>(attachments & backups)"]
         Lambda["Lambda<br/>(Always Free Tier)<br/>Optional: AI proxy, scheduled tasks"]
         RDS["RDS db.t3.micro<br/>(OPTIONAL — adds ~$15/mo)<br/>Use only if you need managed database"]
         
         EIP --> EC2
         EC2 --> S3
-        
-        subgraph EC2_Internal["EC2 Internal"]
-            Apache["Apache + PHP 8.x"]
-            MySQL["MySQL 8 (local)"]
-            App["SmartDesk App"]
-        end
-        
-        EC2 -.-> EC2_Internal
+        EC2 --> Lambda
+        EC2 -.-> RDS
     end
     
-    AWS_Cloud --> OpenAI["OpenAI API<br/>(external)"]
+    OpenAI["OpenAI API<br/>(external)"]
+    EC2 --> OpenAI
     
     style AWS_Cloud fill:#e1f5ff,stroke:#01579b,stroke-width:2px
-    style EC2_Internal fill:#fff9c4,stroke:#f57f17,stroke-width:1px
+    style EC2 fill:#fff9c4,stroke:#f57f17,stroke-width:1px
     style OpenAI fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
 ```
 
