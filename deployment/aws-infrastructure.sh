@@ -6,10 +6,10 @@
 # infrastructure. Run these commands from your local machine
 # with AWS CLI configured.
 #
-# Region: ap-southeast-1 (Singapore)
+# Region: us-east-1 (N. Virginia)
 # =============================================================
 
-REGION="ap-southeast-1"
+REGION="us-east-1"
 KEY_NAME="helpdesk-key"
 APP_NAME="it-helpdesk"
 
@@ -77,7 +77,7 @@ echo "[OK] Security group: $SG_ID"
 # ===========================================
 echo ">>> Launching EC2 instance..."
 # Ubuntu 24.04 LTS AMI (check for latest in your region)
-# AMI_ID="ami-0c1907b2c6e49a7ab"  # Ubuntu 24.04 ap-southeast-1
+# AMI_ID="ami-0c1907b2c6e49a7ab"  # Ubuntu 24.04 us-east-1
 
 # Find the latest Ubuntu 24.04 AMI
 AMI_ID=$(aws ec2 describe-images \

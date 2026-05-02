@@ -1,5 +1,7 @@
 # SmartDesk Ticketing System — AWS Edition
 
+https://is226smartdesk.duckdns.org/
+
 A full-stack PHP/MySQL IT support ticketing system with OpenAI-powered AI features, deployed on Amazon Web Services (EC2 + MySQL + S3).
 
 ---
@@ -149,7 +151,7 @@ sudo rm /var/www/html/hash_passwords.php
 
 1. Create an S3 bucket:
    ```bash
-   aws s3 mb s3://your-helpdesk-files --region ap-southeast-1
+   aws s3 mb s3://your-helpdesk-files --region us-east-1
    ```
 
 2. Block public access:
@@ -164,7 +166,7 @@ sudo rm /var/www/html/hash_passwords.php
 4. Add S3 credentials to `.env`:
    ```
    AWS_S3_BUCKET=your-helpdesk-files
-   AWS_S3_REGION=ap-southeast-1
+   AWS_S3_REGION=us-east-1
    AWS_S3_KEY=AKIA...
    AWS_S3_SECRET=your-secret
    ```
@@ -186,15 +188,15 @@ If you prefer a managed database over MySQL on the EC2 instance:
 
 After RDS is available, update `.env`:
 ```
-DB_HOST=your-rds-endpoint.ap-southeast-1.rds.amazonaws.com
+DB_HOST=your-rds-endpoint.us-east-1.rds.amazonaws.com
 DB_USER=admin
 DB_PASS=your-rds-password
 ```
 
 Then import the schema from your EC2 instance:
 ```bash
-mysql -h your-rds-endpoint.ap-southeast-1.rds.amazonaws.com -u admin -p it_helpdesk < /var/www/html/database/setup.sql
-mysql -h your-rds-endpoint.ap-southeast-1.rds.amazonaws.com -u admin -p it_helpdesk < /var/www/html/database/seed.sql
+mysql -h your-rds-endpoint.us-east-1.rds.amazonaws.com -u admin -p it_helpdesk < /var/www/html/database/setup.sql
+mysql -h your-rds-endpoint.us-east-1.rds.amazonaws.com -u admin -p it_helpdesk < /var/www/html/database/seed.sql
 ```
 
 ---
@@ -314,5 +316,5 @@ it-helpdesk-aws/
 
 ## Author
 
-CMSC 207 — Web Development
+IS 226 — Web Development
 SmartDesk Ticketing System with AI Integration (AWS Edition)
