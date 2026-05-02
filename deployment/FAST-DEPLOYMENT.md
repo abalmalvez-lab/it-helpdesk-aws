@@ -158,7 +158,14 @@ echo "  ssh -i ~/${KEY_NAME}.pem ubuntu@$EIP"
 echo ""
 echo "==========================================="
 ```
+---
 
+### Download the Key Pair
+
+> 1. In CloudShell, click Actions (top-right of the CloudShell panel)
+> 2. Click Download file
+> 3. Enter the path: ```bash/home/cloudshell-user/helpdesk-key.pem```
+> 4. Click Download
 ---
 
 ## Step 3 — Wait & SSH
