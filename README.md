@@ -6,56 +6,48 @@ A full-stack PHP/MySQL IT support ticketing system with OpenAI-powered AI featur
 
 ## AWS Architecture
 
-```
-┌──────────────────────────────────────────────────────────┐
-│  AWS Cloud (ap-southeast-1 / Singapore)                  │
-│                                                          │
-│  ┌─────────────┐    ┌──────────────────────────────┐    │
-│  │  Elastic IP  │───▶│  EC2 t3.micro (Ubuntu 24.04) │    │
-│  │  (Static IP) │    │  ┌────────────────────────┐  │    │
-│  └─────────────┘    │  │ Apache + PHP 8.x       │  │    │
-│                      │  │ MySQL 8 (local)        │  │    │
-│                      │  │ SmartDesk App        │  │    │
-│                      │  └────────────────────────┘  │    │
-│                      └──────────┬───────────────────┘    │
-│                                 │                        │
-│                      ┌──────────▼───────────────────┐    │
-│                      │  S3 Bucket                    │    │
-│                      │  (attachments & backups)      │    │
-│                      └──────────────────────────────┘    │
-│                                                          │
-│  ┌──────────────────────────────────────────────────┐    │
-│  │  Lambda (Always Free Tier)                        │    │
-│  │  Optional: AI proxy, scheduled tasks              │    │
-│  └──────────────────────────────────────────────────┘    │
-│                                                          │
-│  ┌──────────────────────────────────────────────────┐    │
-│  │  RDS db.t3.micro (OPTIONAL — adds ~$19/mo)       │    │
-│  │  Use only if you need managed database            │    │
-│  └──────────────────────────────────────────────────┘    │
-└──────────────────────────────────────────────────────────┘
-                          │
-                          ▼
-                  ┌───────────────┐
-                  │  OpenAI API   │
-                  │  (external)   │
-                  └───────────────┘
+```mermaid
+graph TD
+    subgraph AWS_Cloud["AWS Cloud (us-east-1 / N. Virginia)"]
+        EIP["Elastic IP<br/>(Static IP)"]
+        EC2["EC2 t3.micro<br/>(Ubuntu 24.04)"]
+        S3["S3 Bucket<br/>(attachments & backups)"]
+        Lambda["Lambda<br/>(Always Free Tier)<br/>Optional: AI proxy, scheduled tasks"]
+        RDS["RDS db.t3.micro<br/>(OPTIONAL — adds ~$15/mo)<br/>Use only if you need managed database"]
+        
+        EIP --> EC2
+        EC2 --> S3
+        
+        subgraph EC2_Internal["EC2 Internal"]
+            Apache["Apache + PHP 8.x"]
+            MySQL["MySQL 8 (local)"]
+            App["SmartDesk App"]
+        end
+        
+        EC2 -.-> EC2_Internal
+    end
+    
+    AWS_Cloud --> OpenAI["OpenAI API<br/>(external)"]
+    
+    style AWS_Cloud fill:#e1f5ff,stroke:#01579b,stroke-width:2px
+    style EC2_Internal fill:#fff9c4,stroke:#f57f17,stroke-width:1px
+    style OpenAI fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
 ```
 
 ---
 
-## Estimated Monthly Cost (ap-southeast-1)
+## Estimated Monthly Cost (us-east-1)
 
 | Service | Spec | Free Tier | After Free Tier |
 |---------|------|-----------|-----------------|
-| EC2 | t3.micro Linux 24/7 | $0 (credits) | $9.64/mo |
-| EBS | gp3 20 GB | $0 (credits) | $1.92/mo |
+| EC2 | t3.micro Linux 24/7 | $0 (credits) | $8.47/mo |
+| EBS | gp3 20 GB | $0 (credits) | $1.60/mo |
 | Elastic IP | 1 attached to running instance | $0.00 | $0.00 |
-| S3 | 5 GB Standard | $0 (credits) | $0.13/mo |
+| S3 | 5 GB Standard | $0 (credits) | $0.12/mo |
 | Lambda | ~5K invocations/mo | $0.00 | $0.00 (always free) |
 | Data Transfer | <100 GB/mo | $0.00 | $0.00 (always free) |
-| **Total (recommended)** | | **$0** | **~$12/mo** |
-| RDS (optional) | db.t3.micro MySQL + 20 GB | $0 (credits) | +$18.82/mo |
+| **Total (recommended)** | | **$0** | **~$10/mo** |
+| RDS (optional) | db.t3.micro MySQL + 20 GB | $0 (credits) | +$15.19/mo |
 
 **Free Tier:** New AWS accounts get up to $200 in credits covering ~6 months of usage.
 
@@ -143,10 +135,6 @@ OPENAI_API_KEY=sk-your-key-here
 ### Step 6: Access the Application
 
 Open `http://your-elastic-ip` in your browser.
-
-Default admin account (after running hash_passwords.php):
-- **Email:** admin@smartdesk.local
-- **Password:** Admin123!
 
 **Important:** Change the admin password immediately after first login, then delete `hash_passwords.php`:
 
@@ -295,17 +283,6 @@ it-helpdesk-aws/
 - **AI Features** — Classification, Troubleshooting, Resolution Draft, Summary, Escalation, Chat Widget, Report Insights
 - **Security** — CSRF, bcrypt, prepared statements, XSS prevention
 
----
-
-## Default Accounts
-
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@smartdesk.local | Admin123! |
-| Support Staff | staff@smartdesk.local | Staff123! |
-| End User | user@smartdesk.local | User123! |
-
-**Change all passwords immediately after deployment.** These accounts are created by `seed.sql` and `hash_passwords.php`.
 
 ---
 
