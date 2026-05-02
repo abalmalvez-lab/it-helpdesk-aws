@@ -316,5 +316,7 @@ it-helpdesk-aws/
 
 ## Author
 **Note:** This project was created for educational purposes as part of the IS 226 course. Database files are not included in this repository.
-IS 226 — Web Development
+<br>
+IS 226 - Web Development
+<br>
 SmartDesk Ticketing System with AI Integration (AWS Edition)
