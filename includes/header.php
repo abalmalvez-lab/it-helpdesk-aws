@@ -50,6 +50,7 @@ $currentDir = basename(dirname($_SERVER['SCRIPT_FILENAME']));
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="<?= $baseUrl ?>/dashboard.php"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                <li><a class="dropdown-item" href="<?= $baseUrl ?>/change_password.php"><i class="fas fa-key me-2"></i>Change Password</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item text-danger" href="<?= $baseUrl ?>/logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
             </ul>

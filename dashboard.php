@@ -61,63 +61,82 @@ $monthCounts = array_column($monthData, 'cnt');
     </nav>
 </div>
 
-<!-- Stat Cards -->
+<!-- Stat Cards (clickable) -->
+<?php
+$ticketBase = $baseUrl . '/modules/tickets/index.php';
+?>
 <div class="row g-3 mb-4">
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card stat-primary">
-            <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
-            <div class="stat-value"><?= $counts['total'] ?></div>
-            <div class="stat-label">Total Tickets</div>
-        </div>
+        <a href="<?= $ticketBase ?>" class="stat-card-link">
+            <div class="stat-card stat-primary">
+                <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
+                <div class="stat-value"><?= $counts['total'] ?></div>
+                <div class="stat-label">Total Tickets</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card stat-info">
-            <div class="stat-icon"><i class="fas fa-folder-open"></i></div>
-            <div class="stat-value"><?= $counts['open'] ?></div>
-            <div class="stat-label">Open</div>
-        </div>
+        <a href="<?= $ticketBase ?>?status=Open" class="stat-card-link">
+            <div class="stat-card stat-info">
+                <div class="stat-icon"><i class="fas fa-folder-open"></i></div>
+                <div class="stat-value"><?= $counts['open'] ?></div>
+                <div class="stat-label">Open</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card stat-warning">
-            <div class="stat-icon"><i class="fas fa-spinner"></i></div>
-            <div class="stat-value"><?= $counts['in_progress'] ?></div>
-            <div class="stat-label">In Progress</div>
-        </div>
+        <a href="<?= $ticketBase ?>?status=In+Progress" class="stat-card-link">
+            <div class="stat-card stat-warning">
+                <div class="stat-icon"><i class="fas fa-spinner"></i></div>
+                <div class="stat-value"><?= $counts['in_progress'] ?></div>
+                <div class="stat-label">In Progress</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card stat-danger">
-            <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
-            <div class="stat-value"><?= $counts['escalated'] ?></div>
-            <div class="stat-label">Escalated</div>
-        </div>
+        <a href="<?= $ticketBase ?>?status=Escalated" class="stat-card-link">
+            <div class="stat-card stat-danger">
+                <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="stat-value"><?= $counts['escalated'] ?></div>
+                <div class="stat-label">Escalated</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card stat-success">
-            <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="stat-value"><?= $counts['resolved'] ?></div>
-            <div class="stat-label">Resolved</div>
-        </div>
+        <a href="<?= $ticketBase ?>?status=Resolved" class="stat-card-link">
+            <div class="stat-card stat-success">
+                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-value"><?= $counts['resolved'] ?></div>
+                <div class="stat-label">Resolved</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card" style="border-left: 3px solid var(--text-muted);">
-            <div class="stat-icon" style="background:#f1f5f9;color:var(--text-secondary);"><i class="fas fa-archive"></i></div>
-            <div class="stat-value"><?= $counts['closed'] ?></div>
-            <div class="stat-label">Closed</div>
-        </div>
+        <a href="<?= $ticketBase ?>?status=Closed" class="stat-card-link">
+            <div class="stat-card" style="border-left: 3px solid var(--slate-400);">
+                <div class="stat-icon" style="background:var(--slate-100);color:var(--slate-500);"><i class="fas fa-archive"></i></div>
+                <div class="stat-value"><?= $counts['closed'] ?></div>
+                <div class="stat-label">Closed</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card" style="border-left: 3px solid var(--info);">
-            <div class="stat-icon" style="background:var(--info-light);color:var(--info);"><i class="fas fa-user-check"></i></div>
-            <div class="stat-value"><?= $counts['assigned'] ?></div>
-            <div class="stat-label">Assigned</div>
-        </div>
+        <a href="<?= $ticketBase ?>?status=Assigned" class="stat-card-link">
+            <div class="stat-card stat-info">
+                <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                <div class="stat-value"><?= $counts['assigned'] ?></div>
+                <div class="stat-label">Assigned</div>
+            </div>
+        </a>
     </div>
     <div class="col-6 col-md-4 col-xl-3">
-        <div class="stat-card stat-danger" style="border-left: 3px solid var(--danger);">
-            <div class="stat-icon"><i class="fas fa-clock"></i></div>
-            <div class="stat-value"><?= $counts['sla_breached'] ?></div>
-            <div class="stat-label">SLA Breached</div>
-        </div>
+        <a href="<?= $ticketBase ?>" class="stat-card-link">
+            <div class="stat-card stat-danger">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-value"><?= $counts['sla_breached'] ?></div>
+                <div class="stat-label">SLA Breached</div>
+            </div>
+        </a>
     </div>
 </div>
 
