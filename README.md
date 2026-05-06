@@ -1,6 +1,8 @@
 # SmartDesk Ticketing System — AWS Edition
 
-https://is226smartdesk.duckdns.org/
+Application Demo: https://www.youtube.com/watch?v=8W7ZRNM_dJk
+
+Site: https://is226smartdesk.duckdns.org/
 
 A full-stack PHP/MySQL IT support ticketing system with OpenAI-powered AI features, deployed on Amazon Web Services (EC2 + MySQL + S3).
 
